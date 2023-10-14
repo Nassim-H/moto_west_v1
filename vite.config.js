@@ -5,10 +5,12 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/css/app.css',
+                'resources/sass/app.scss',
                 'resources/js/app.js',
+                'node_modules/bootstrap/dist/css/bootstrap.css'
             ],
             refresh: true,
+            output: 'public/css',
         }),
     ],
 });

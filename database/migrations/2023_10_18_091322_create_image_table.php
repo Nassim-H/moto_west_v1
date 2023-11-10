@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('marque', function (Blueprint $table) {
+        Schema::create('image', function (Blueprint $table) {
             $table->id();
-            $table->string("nom");
-            $table->string("logo");
+            $table->unsignedBigInteger('id_piece');
+            $table->foreign('id_piece')
+                ->references('id')
+                ->on('piece')
+                ->onDelete('cascade');
+            $table->string('url');
 
         });
     }
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('marque');
+        Schema::dropIfExists('image');
     }
 };

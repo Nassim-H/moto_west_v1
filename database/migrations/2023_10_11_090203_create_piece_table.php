@@ -17,9 +17,9 @@ return new class extends Migration
             $table->integer("quantite");
             $table->integer("prix");
             $table->unsignedBigInteger('id_modele'); // Colonne de la clé étrangère
-            $table->foreign('id_modele')->references('id')->on('modele'); // Clé étrangère liée à la table 'users'
+            $table->foreign('id_modele')->references('id')->on('modele')->onDelete('cascade'); // Clé étrangère liée à la table 'users'
             $table->unsignedBigInteger('id_localisation'); // Colonne de la clé étrangère
-            $table->foreign('id_localisation')->references('id')->on('localisation'); // Clé étrangère liée à la table 'users'
+            $table->foreign('id_localisation')->references('id')->on('localisation')->onDelete('cascade'); // Clé étrangère liée à la table 'users'
 
         });
     }

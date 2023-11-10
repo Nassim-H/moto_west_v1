@@ -35,4 +35,9 @@ class Piece extends Model
     {
         return $this->belongsTo(Marque::class, 'id_marque');
     }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'id_piece');
+    }
 }

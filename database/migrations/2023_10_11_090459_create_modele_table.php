@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("nom");
             $table->integer("cylindree")->nullable();
             $table->unsignedBigInteger('id_marque'); // Colonne de la clé étrangère
-            $table->foreign('id_marque')->references('id')->on('marque'); // Clé étrangère liée à la table 'users'
+            $table->foreign('id_marque')->references('id')->on('marque')->onDelete('cascade'); // Clé étrangère liée à la table 'users'
         });
     }
 

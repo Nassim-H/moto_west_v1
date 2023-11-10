@@ -1,33 +1,43 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-dark border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <img src="logo.png">
-                    </a>
+                    <a href="{{ route('welcome') }}"></a>
+                    <img src="{{asset("/logo-removebg-preview.svg")}}" width="50" height="50" alt="Logo">
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')" class="text-white">
+                        {{ __('Accueil') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('produit')" :active="request()->routeIs('produit')" class="text-white">
+                        {{ __('Produits') }}
                     </x-nav-link>
                 </div>
                 @auth
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('piece.create')" :active="request()->routeIs('piece.create')"> Ajouter Piece</x-nav-link>
+                    <x-nav-link :href="route('piece.create')" :active="request()->routeIs('piece.create')" class="text-white"> Ajouter Piece</x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('piece.index')" :active="request()->routeIs('piece.index')"> Afficher Piece</x-nav-link>
+                    <x-nav-link :href="route('piece.index')" :active="request()->routeIs('piece.index')" class="text-white"> Afficher Piece</x-nav-link>
                 </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('marque.create')" :active="request()->routeIs('marque.create')" class="text-white"> Ajouter Marque</x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('marque.index2')" :active="request()->routeIs('marque.index2')" class="text-white"> Afficher Marques</x-nav-link>
+                    </div>
                 @endauth
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden sm:flex sm:items-center sm:ml-6 bg-dark ">
                 @guest
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">

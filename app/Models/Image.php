@@ -5,22 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Marque extends Model
+class Image extends Model
 {
     use HasFactory;
-    protected $table = 'marque';
+    protected $table = 'image';
 
     public $timestamps = false;
 
     protected $fillable = [
-        'nom',
-        'logo'
+        'url',
+        'id_piece',
     ];
 
 
-
-    public function modeles()
+    public function piece()
     {
-        return $this->hasMany(Modele::class, 'id_marque');
+        return $this->belongsTo(Piece::class, 'id_piece');
     }
 }

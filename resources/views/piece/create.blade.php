@@ -8,9 +8,8 @@
     @csrf <!-- {{ csrf_field() }} -->
 
     <div class="d-flex justify-content-center align-items-center py-5">
-        <form action="/pieces" method="post" class="w-50">
+        <form action="/pieces" method="post" class="w-50" enctype="multipart/form-data">
             <!-- Votre formulaire ici -->
-            <form action="/pieces" method="post">
 
                 <div class="mb-3">
                     <label for="nom" class="form-label">Nom de la pièce :</label>
@@ -57,11 +56,15 @@
                     <label for="pays" class="form-label">Pays :</label>
                     <input type="text" name="pays" id="pays" class="form-control">
                 </div>
+                <div class="mb-3">
+                    <label for="images" class="form-label">Images de la pièce :</label>
+                    <input type="file" name="images[]" id="images" class="form-control" multiple>
+                </div>
+
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <button type="submit" class="btn btn-primary">Ajouter l'article</button>
 
             </form>
-        </form>
     </div>
 
 

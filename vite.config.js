@@ -13,4 +13,7 @@ export default defineConfig({
             output: 'public/css',
         }),
     ],
+    optimizeDeps: {
+        include: ['jquery'],
+    },
 });

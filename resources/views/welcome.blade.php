@@ -33,7 +33,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card" style="width: 200px; height: 200px;">
 
-                        <img src="{{ asset('images/' . $marque->logo) }}" alt="Image" class="align-self-center" style="max-height: 100%;">
+                        <img src="{{ asset('images/' . $marque->logo) }}" alt="Image" class="align-self-center" style="max-height: 111px; min-height: 111px;">
 
                         <div class="card-body">
                             <div class="text-center"> <!-- Utilisez la classe text-center ici -->

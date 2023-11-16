@@ -29,7 +29,7 @@ class MarqueController extends Controller
         $marque->nom = strtolower($request->nom);
 
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validation de l'image
         ]);
 
         $image = $request->file('image');

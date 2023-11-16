@@ -13,7 +13,7 @@ class PieceController extends Controller
 {
     public function create()
     {
-        return view('piece/create');
+        return view('piece/create', ['marques' => Marque::all()]);
     }
 
 

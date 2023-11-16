@@ -28,9 +28,26 @@
 
                 <div class="mb-3">
                     <label for="marque" class="form-label">Marque de la moto :</label>
-                    <textarea name="marque" id="marque" class="form-control"></textarea>
+                    <input type="text" name="marque" id="marque" class="form-control" list="marqueSuggestions">
+                    <datalist id="marqueSuggestions">
+                        @foreach($marques as $marque)
+                            <option value="{{ $marque->nom }}">
+                        @endforeach
+                    </datalist>
                 </div>
+            <div class="mb-3">
+                <label for="marque_select" class="form-label">Autre champ :</label>
+                <select name="marque_select" id="marque_select" class="form-control">
+                    @foreach($marques as $marque)
+                        <option value="{{ $marque->id }}">{{ $marque->nom }}</option>
+                    @endforeach
+                </select>
+            </div>
 
+            <script src="{{ asset('js/app.js') }}"></script>
+            <script>
+                const marquesData = {!! $marques->toJson() !!};
+            </script>
 
                 <div class="mb-3">
                     <label for="quantite" class="form-label">Quantité :</label>
